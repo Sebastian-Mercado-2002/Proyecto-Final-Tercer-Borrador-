@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Aplicación de la IA</h1>
+    {% for post in posts %}
+        <h3>{{ post.titulo }}</h3>
+        <p>{{ post.texto }}</p>
+        {% if post.imagen %}
+            <img src="{{ post.imagen.url }}" alt="Imagen del post">
+        {% endif %}
+    {% empty %}
+        <p>No hay posts disponibles.</p>
+    {% endfor %}
+{% endblock %}
